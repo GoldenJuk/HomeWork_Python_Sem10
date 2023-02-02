@@ -21,7 +21,7 @@ async def bot_takes_sweets(message: Message):
            else:
                await message.answer(f'Осталось {match[2]} конфет, я их забираю. Я выйграл!!!')
                data.meet.remove(match)
-               match[3] = False
+               data.game = False
 
 
 async def player_takes_sweets(message: Message):
@@ -33,4 +33,4 @@ async def player_takes_sweets(message: Message):
             else:
                 await message.answer(f'Выйграл, {message.from_user.first_name}!!!')
                 data.meet.remove(match)
-                match[3] = False
+                data.game = False
