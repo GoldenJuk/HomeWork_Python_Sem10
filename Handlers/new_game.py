@@ -12,6 +12,7 @@ async def mes_new(message: Message):
     player = message.from_user.id
 
     for match in data.meet:
+        print(match)
         if player == match[0]:
             await message.answer('Ты уже начал игру, продолжай!')
             break

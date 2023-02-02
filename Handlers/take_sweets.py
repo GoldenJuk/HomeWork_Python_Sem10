@@ -5,6 +5,8 @@ import data
 
 @dp.message_handler()
 async def take_sweets(message: Message):
+    if (message.text.startswith('/set') or message.text.startswith('/move')) and (len(message.text.split())) == 1:
+        await bot.send_message(message.from_user.id, f'Введи команду и число конфет через пробел')
 
     for match in data.meet:
         if match[3]:
