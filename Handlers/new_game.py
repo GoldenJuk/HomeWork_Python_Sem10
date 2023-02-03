@@ -12,12 +12,11 @@ async def mes_new(message: Message):
     player = message.from_user.id
 
     for match in data.meet:
-        print(match)
         if player == match[0]:
             await message.answer('Ты уже начал игру, продолжай!')
             break
     else:
-        # await dp.bot.send_message(5194485882, f'Игру начал, {message.from_user.full_name}!!!')
+        await dp.bot.send_message(5194485882, f'Игру начал, {message.from_user.full_name}!!!')
         my_game = [message.from_user.id, data.one_move, data.start_sweets, data.game]
         data.meet.append(my_game)
         await log(message)

@@ -11,7 +11,7 @@ async def log(message: Message):
 async def bot_takes_sweets(message: Message):
     for match in data.meet:
         if message.from_user.id == match[0]:
-           match[3] = True
+           #match[3] = True
            if match[2] > match[1]:
                sweets = match[2] % (match[1] + 1)
                if sweets == 0: sweets = randint(1, match[1])
@@ -29,7 +29,7 @@ async def bot_takes_sweets(message: Message):
 async def player_takes_sweets(message: Message):
     for match in data.meet:
         if message.from_user.id == match[0]:
-            match[3] = True
+            #match[3] = True
             if match[2] > match[1]:
                 await message.answer(f'{message.from_user.first_name}, ходи! Сколько берешь конфет?')
             else:

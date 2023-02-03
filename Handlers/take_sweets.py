@@ -21,3 +21,4 @@ async def take_sweets(message: Message):
                 else:
                     await bot.send_message(message.from_user.id, f'Всего {match[2]} конфет. Введи число!\n'
                                                                  f'Если хочешь установить новое количество конфет, набери, например: /set 500')
+                    
